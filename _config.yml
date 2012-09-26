@@ -1,0 +1,15 @@
+#baseurl: /love-studio
+
+#markdown: kramdown
+
+markdown: maruku
+
+
+pygments: false
+permalink: /blog/:year/:month/:day/:title
+
+
+
+
+
+
