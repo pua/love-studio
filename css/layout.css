@@ -133,13 +133,15 @@ body .fn-hide { display:none; }
 
 .box-border{
 	border:1px solid grey;
+	
+	box-shadow: 3px 3px 0 #e0e0e0;
 	-moz-box-shadow: 3px 3px #e0e0e0;
     -webkit-box-shadow: 3px 3px 0 #e0e0e0;
-	box-shadow: 3px 3px 0 #e0e0e0;
 	
+	border-radius: 4px 4px;
 	-webkit-border-radius: 4px 4px;
     -moz-border-radius: 4px 4px;
-    border-radius: 4px 4px;
+    
 }
 
 #notice{
@@ -161,7 +163,7 @@ body .fn-hide { display:none; }
 .focus .focuspic{height:280px;width:999em;position:relative;float:left;margin-bottom:10px}
 .focus .focuspic .indexbanner{float:left;width:945px;position:relative;height:280px;overflow:hidden;border:solid 0px #3366cc;}
 /* scrollbox */
-.scrollbox{height:120px;padding:10px 0;float:left;width:945px}
+.scrollbox{height:100px;padding:10px 0;float:left;width:945px}
 .scrollbox .scrollbtn{width:12px;height:37px;margin:38px 5px 20px 5px;overflow:hidden;background:url("../images/arrow.gif") no-repeat;cursor:pointer;}
 .scrollbox #prev{background-position:0 0;}
 .scrollbox #prev.disabled{background-position:0 -37px;cursor:default;}
@@ -245,20 +247,85 @@ body .fn-hide { display:none; }
 .bt{width:100px;margin-left:auto;margin-right:auto;font-size:14px}
 
 #news{
-	height: 260px;
+	height: auto;
+}
+
+#newslist li{
+	border-top: 1px dashed #e8e8e8;
+	display:block;
+	height:30px;
+	font-size:16px;
+	padding-top:8px;
+}
+
+#newslist li span{
+	margin-left:20px;
+	font-family:"黑体";
+	font-weight:700;
+	margin-right:10px;
+	display:block; 
+	float:left;
+	width:90px;
 }
 
 #about{
-	height: 150px;
+	height: auto;
+}
+
+#about h2{
+	font-size:16px;
+	font-family:"黑体";
+	margin: 10px auto 10px 20px;
+}
+
+.intro{
+	margin: 0 10px 10px 20px;
+	font-size:14px;
+	font-family:"宋体";
 }
 
 #teacher{
-	height: 400px;
+	height: auto;
+}
+
+
+ul.techerlist li{
+	width: 205px;
+	margin-right:15px;
+	margin-bottom:15px;
+	float:left;	
+	border: 1px dashed #e8e8e8;
+	
+}
+
+ul.techerlist img{
+	margin-top:10px;
+}
+
+ul.techerlist h2{
+	font-size:14px;
+	font-family:"黑体";
+	font-weight:700;
+	margin: 10px auto 10px 20px;
+}
+
+ul.techerlist span{
+	font-size:14px;
+	font-family:"宋体";
+	display:block; 
+	margin: 10px auto 20px 20px;
 }
 
 #ad{
-	height: 250px;
+	height: auto;
 }
+
+.bottom-search{
+	background: #979ea4 url('../images/search.jpg') no-repeat 0 0;
+	height:98px;
+	
+}
+
 /** foot **/
 #foot{
 	width: 100%;

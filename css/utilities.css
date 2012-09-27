@@ -104,8 +104,8 @@
 .margin-left10{margin-left:10px;}
 .margin-left12{margin-left:12px;}
 .margin-left13{margin-left:13px;}
-.margin-left14{margin-left:14px;}
-.margin-left19{margin-left:19px;}
+.margin-left15{margin-left:15px;}
+.margin-left20{margin-left:20px;}
 
 .textcolorfff{ color:#fff;}
 .textcolor000{color:#000;}
@@ -142,7 +142,7 @@
 .margin-top30{ margin-top:30px;}
 .margin-top40{ margin-top:40px;}
 .margin-top35{ margin-top:35px;}
-
+.margin-top50{ margin-top:50px;}
 
 .margin-bottom40{ margin-bottom:40px;}
 .margin-bottom35{ margin-bottom:35px;}
@@ -176,9 +176,12 @@
 .distance80{height:80px;}
 .distance100{ height:100px;}
 
+.overflowhiden{overflow:hidden;}
+
 .width96{width:90px;}
 .width43{width:43px;}
 .width17{width:8px;}
+.width250{width:250px;}
 .width950{width:950px;}
 .width990{width:990px;}
 .width400{width:400px;}
