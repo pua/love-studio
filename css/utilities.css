@@ -143,6 +143,7 @@
 .margin-top40{ margin-top:40px;}
 .margin-top35{ margin-top:35px;}
 
+
 .margin-bottom40{ margin-bottom:40px;}
 .margin-bottom35{ margin-bottom:35px;}
 .margin-bottom30{ margin-bottom:30px;}
@@ -182,6 +183,8 @@
 .width990{width:990px;}
 .width400{width:400px;}
 .width550{width:550px;}
+.width432{width:432px;}
+.width710{width:710px;}
 
 .listli_lineborder{ border-bottom:1px solid #e0e0e0;}
 .bordernone{border:none;}
@@ -191,5 +194,6 @@
 
 .height32{ height:32px; line-height:32px;}
 .height26{ height:26px; line-height:26px;}
-
-
+.height170{ height:170px; line-height:170px;}
+.backcolorgrey{background-color: grey}
+.backcolore8{background-color: #e8e8e8}

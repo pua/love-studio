@@ -35,7 +35,7 @@ $(function(){
 		$(this).addClass("current");
 		
 		//大图上移
-		$(".focus .focuspic").animate({"marginLeft":slideclick*-950},{duration:animate_time,queue:false});
+		$(".focus .focuspic").animate({"marginLeft":slideclick*-945},{duration:animate_time,queue:false});
 	
 		//控制缩略图显示个数
 		if(slideclick<picnumber){
@@ -68,7 +68,7 @@ $(function(){
 		$(".scrollpic li").removeClass("current");
 		$(this).addClass("current");		
 		
-		$(".focuspic").animate({"marginLeft":slidebtn_hover_chi*-950},{duration:animate_time,queue:false});
+		$(".focuspic").animate({"marginLeft":slidebtn_hover_chi*-945},{duration:animate_time,queue:false});
 		
 		if(slidebtn_hover_chi!=slideclick);
 		

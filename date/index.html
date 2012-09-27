@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+	 <meta http-equiv="Content-Type" charset="utf-8" />
+    <title> 日期计算器</title>
+		<script src="/js/jquery.min.js" type="text/javascript"></script>
+<style type='text/css'>
+	#secondsidebar { width: 180px; }
+	#secondsidebar .side-widget { width: 160px; }
+	#leftcontent img { max-width: 587px; }
+	#title { float: left; }
+	#description { clear: left; float: left; }
+	#headerad { float: right; margin: 18px 5px 0 0; }
+	
+	.ind-post, .post, .pages {	
+    float: left;
+    border-bottom: 1px solid rgb(170, 170, 170);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+#mainwrapper {
+    display: block;
+    position: relative;
+    width: 780px;
+    min-height: 800px;
+    margin: 0px auto;
+    padding: 4px 4px 0px 8px;
+	background-color: rgb(241, 248, 250);
+
+}
+
+body {
+    margin: 0px;
+    font-size: 14px;
+    padding: 0px;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+	background-color: #e8e8e8;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- end header -->
+
+
+<div id="mainwrapper">
+		
+		<div class="pages">
+		<h1>Date to Millisecond Calculators</h1>
+				<p>Several date to millisecond calculators, useful when coding countdown timers, cookie expiration settings or other date related scripts.  The calculators are coded in JavaScript.</p>
+
+
+
+<script type="text/javascript">
+var today = new Date();
+var startOfEpoch = new Date(0);
+
+function nameBtn(){
+  document.forms["d2mForm"].d2mBtn.value = "converted to milliseconds since "+startOfEpoch;
+}
+
+jQuery(nameBtn);
+</script>
+
+
+<h5>The known data:</h5>
+<form action="">
+<p class="mtb">
+
+Your computer's time:<br />
+<small><script type="text/javascript">
+<!--
+document.write(today);
+
+// -->
+</script></small><br />
+equals<br />
+<small>
+<script type="text/javascript">
+<!--
+document.write(today.valueOf());
+
+// -->
+</script></small> milliseconds<br />
+since<br />
+<script type="text/javascript">document.write(startOfEpoch);</script>  -- the start of <a href="http://en.wikipedia.org/wiki/Unix_time">Unix Epoch Time</a>.
+
+</p>
+</form>
+
+<h5>Convert a millisecond value to a date string</h5>
+<form action="">
+<p class="mtb">
+this (milli<input type="checkbox" name="milli" checked="checked" onclick="timeToDate(this.form);" />)second time number:<br />
+<input type="text" name="inPut" size="30" onkeyup="timeToDate(this.form);"  title="Enter a date here" /><br />
+is the equivalent of this date string:<br />
+<input type="text" name="output" size="60" readonly="readonly" class="result" />
+</p>
+</form>
+
+
+<h5>Date to milliseconds converter</h5>
+<form id="d2mForm" action="">
+<p class="mtb">
+
+a date string<br /><span class="tip">examples: <br />"Mon Jun 18 2007 00:00:00 GMT-0400 (Eastern Daylight Time)"<br />or "09/23/2000" <br />or "09/23/2000 9:45:00"</span>
+<br />
+<input type="text" name="inPut" size="60" title="Enter a date string here."/>
+<br />
+<input name="d2mBtn" type="button" value="" onclick="stringToNum(this.form);" title="press this button to convert"  /><br />
+<input type="text" name="output" size="40" readonly="readonly" class="result" /> <!-- Base <select onchange="this.form.output.value=parseInt(this.form.output.value,this.value);"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10" selected="selected">10</option><option value="11">11</option><option value="12">12</option><option value="12">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option></select> -->
+
+</p>
+</form>
+
+
+<h5>What date would that be?</h5>
+<form action="">
+<p class="mtb">
+
+Your computer's time:<br />
+<small><script type="text/javascript">
+<!--
+document.write(today);
+
+// -->
+</script></small><br />
+<input name="operand" type="button" value="+" onclick="this.value = this.value == '+'? '-':'+'; whatIsThatDate(this.form);" title="click to change sign" /><br />
+
+<input type="text" name="inPut" size="30" title="Enter a number here" onkeyup="whatIsThatDate(this.form);"/> 
+
+ <select name="tmpUnit" onchange="whatIsThatDate(this.form);">
+<option value=""> - CHOOSE ONE - </option>
+<option value="ms">milliseconds</option>
+<option value="sec">seconds</option>
+<option value="min">minutes</option>
+<option value="hours">hours</option>
+<option value="days">days</option>
+<option value="weeks">weeks</option>
+<option value="months">months</option>
+<option value="years">years</option>
+</select>
+
+equals this date:<br />
+<input type="text" name="output" size="80" readonly="readonly" class="result" />
+
+</p>
+</form>
+
+<h5>A temporal value converted to milliseconds</h5>
+<form action="">
+<p class="mtb">
+
+<input type="text" name="inPut" size="30" onkeyup="TemporalUnitToMS(this.form);" title="please enter an integer.  decimal values are not accepted" /> <select name="tmpUnit" onchange="TemporalUnitToMS(this.form);"><option value=""> - CHOOSE ONE - </option>
+<option value="min">minutes</option>
+<option value="hours">hours</option>
+<option value="days">days</option>
+<option value="weeks">weeks</option>
+<option value="months">months</option>
+<option value="years">years</option>
+</select><br />
+
+equals so many (milli<input type="checkbox" name="milli" checked="checked" onclick="TemporalUnitToMS(this.form);" />)seconds: <input type="text" name="output" size="40" readonly="readonly" class="result" /> 
+
+</p>
+</form>
+
+
+
+<h5>Milliseconds converted to a temporal value</h5>
+<form action="">
+<p class="mtb">
+
+So many (milli<input type="checkbox" name="milli" checked="checked" onclick="secToCalQC(this.form);" />)seconds:<br />
+<input type="text" name="inPut" size="30" onkeyup="secToCal(this.form);"  title="please enter an integer.  decimal values are not accepted" /><br />
+equals so many <select name="tmpUnit" onchange="secToCal(this.form);"><option value=""> - CHOOSE ONE - </option>
+<option value="min">minutes</option>
+<option value="hours">hours</option>
+<option value="days">days</option>
+<option value="weeks">weeks</option>
+<option value="months">months</option>
+<option value="years">years</option>
+</select>: <input type="text" name="output" size="40" readonly="readonly" class="result" /> 
+
+</p>
+</form>
+
+
+<h5>How much time between now and then?</h5>
+<form action="">
+<p class="mtb">
+
+Your computer's time:<br />
+<small><script type="text/javascript">
+<!--
+document.write(today);
+
+// -->
+</script></small><br />
+and this date: <br />
+<span class="tip">examples: <br />"Mon Jun 18 2007 00:00:00 GMT-0400 (Eastern Daylight Time)"<br />or "09/23/2000" <br />or "09/23/2000 9:45:00"</span>
+<br />
+<input type="text" name="inPut" size="80" title="Enter a date here" onkeyup="howFarCal(this.form);" /><br />
+are so many <select name="tmpUnit" onchange="howFarCal(this.form);">
+<option value=""> - CHOOSE ONE - </option>
+<option value="ms">milliseconds</option>
+<option value="sec">seconds</option>
+<option value="min">minutes</option>
+<option value="hours">hours</option>
+<option value="days">days</option>
+<option value="weeks">weeks</option>
+<option value="months">months</option>
+<option value="years">years</option>
+</select> apart:<br />
+<input type="text" name="output" size="40" readonly="readonly" class="result" />
+
+</p>
+</form>
+
+
+
+
+
+<h5>How much time between now and then (using a millisecond date value)?</h5>
+<form action="">
+<p class="mtb">
+
+Your computer's time:<br />
+<small><script type="text/javascript">
+<!--
+document.write(today);
+
+// -->
+</script></small><br />
+and this date in (milli<input type="checkbox" name="milli" checked="checked" onclick="howFarMS(this.form);" />)seconds:<br />
+<input type="text" name="inPut" size="30" onkeyup="howFarMS(this.form);"  title="Enter a number here" /><br />
+are so many <select name="tmpUnit" onchange="howFarMS(this.form);">
+<option value=""> - CHOOSE ONE - </option>
+<option value="ms">milliseconds</option>
+<option value="sec">seconds</option>
+<option value="min">minutes</option>
+<option value="hours">hours</option>
+<option value="days">days</option>
+<option value="weeks">weeks</option>
+<option value="months">months</option>
+<option value="years">years</option>
+</select> apart:<br />
+<input type="text" name="output" size="40" readonly="readonly" class="result" />
+
+</p>
+</form>
+
+
+<script type="text/javascript">
+//msConverter converts to/from milliseconds 
+//inPut:integer, operand:string:* or /, tmpU:string, inMS: boolean
+function msConverter(inPut,operand,tmpU,inMS){
+	var ms = inMS ? 1000 : 1;
+	var factors = "";
+   switch(tmpU)
+   {
+      case "ms":   factors = 1;
+      break;
+      case "sec":   factors = ms;
+      break;
+      case "min":   factors = 60*ms;
+      break;
+      case "hours":   factors = 60*60*ms;
+      break;
+      case "days":   factors = 60*60*24*ms;
+      break;
+      case "weeks":   factors = 60*60*24*7*ms;
+      break;
+      case "months":   factors = 60*60*24*31*ms;
+      break;
+      case "years":   factors = 60*60*24*365*ms;
+      break;
+   }
+   
+   return eval(inPut+operand+factors);
+
+}
+
+function secToCal(f){
+  var inPut = parseInt(f.inPut.value)? parseInt(f.inPut.value):0;
+  var tmpU = f.tmpUnit.options[f.tmpUnit.selectedIndex].value;
+  if(!tmpU)return;
+
+  f.output.value = msConverter(inPut,"/",tmpU,f.milli.checked);
+  //pageTracker._trackPageview("/dateCalcs/milliseconds-converted-to-a-temporal-value");
+  pageTracker._trackEvent("dateCalculators", "milliseconds-converted-to-a-temporal-value", inPut);
+}
+
+
+function TemporalUnitToMS(f){
+  var inPut = parseInt(f.inPut.value)? parseInt(f.inPut.value):0;
+  var tmpU = f.tmpUnit.options[f.tmpUnit.selectedIndex].value;
+  if(!tmpU)return;
+
+  f.output.value = msConverter(inPut,"*",tmpU,f.milli.checked)
+  //pageTracker._trackPageview("/dateCalcs/temporal-value-converted-to-milliseconds");
+  pageTracker._trackEvent("dateCalculators", "temporal-value-converted-to-milliseconds", inPut);
+}
+
+
+function stringToNum(f){
+	if(!f.inPut.value.length){
+		alert("Please enter a date string first.");
+		return;
+	}
+	f.output.value = Date.parse(f.inPut.value);
+	//pageTracker._trackPageview("/dateCalcs/Date-to-milliseconds-converter");
+	pageTracker._trackEvent("dateCalculators", "date-to-milliseconds-converter", f.inPut.value);
+}
+
+
+function secToCalQC(f){
+  if(f.output.value != ""){
+    if(f.milli.checked)f.output.value = f.output.value/1000;
+    else f.output.value = f.output.value*1000;
+  }
+  
+}
+
+
+
+function addToToday(f){
+  todayMS = today.valueOf();
+  var inPut = parseInt(f.inPut.value)? parseInt(f.inPut.value)*(f.milli.checked?1:1000):0;
+  if(!inPut)return;
+  var mathString = todayMS+f.operand.value+inPut;
+  var futureDate = new Date( eval(mathString));
+  f.output.value = futureDate;
+}
+
+
+
+
+
+function howFarCal(f){
+	if(!f.inPut.value.length){
+		//alert("Please enter a date first.");
+		return;
+	}
+	
+  	var inPut = Date.parse(f.inPut.value);
+  
+  	if(isNaN(inPut)){
+		return;
+  	}
+
+  	todayMS = today.valueOf();
+
+  	var outPut = Math.abs(todayMS - inPut);
+
+  	var tmpU = f.tmpUnit.options[f.tmpUnit.selectedIndex].value;
+  	if(!tmpU)return;
+
+  	f.output.value = msConverter(outPut,"/",tmpU,true);
+
+	//pageTracker._trackPageview("/dateCalcs/how-much-time-between-now-and-then");
+	pageTracker._trackEvent("dateCalculators", "how-much-time-between-now-and-then", f.inPut.value);
+
+}
+
+
+
+
+
+
+
+function howFarMS(f){
+	if(!f.inPut.value.length)return;
+	
+	todayMS = today.valueOf();
+	var mx = f.milli.checked?1:1000;
+	var inPut = parseInt(f.inPut.value)? (parseInt(f.inPut.value)*mx) : false;
+	if(!inPut)return;
+	var outPut =Math.abs(todayMS - inPut);
+	
+	var tmpU = f.tmpUnit.options[f.tmpUnit.selectedIndex].value;
+	if(!tmpU)return;
+	
+	f.output.value = msConverter(outPut,"/",tmpU,true);
+	
+	//pageTracker._trackPageview("/dateCalcs/how-many-milliseconds-between-now-and-then");
+	pageTracker._trackEvent("dateCalculators", "how-many-milliseconds-between-now-and-then", inPut);
+
+}
+
+function timeToDate(f){
+  if(!f.inPut.value.length){
+	f.output.value = "";
+	return;
+  }
+  f.output.value = new Date(parseInt(f.inPut.value)*(f.milli.checked?1:1000));
+  //pageTracker._trackPageview("/dateCalcs/millisecond-to-date-string");
+  pageTracker._trackEvent("dateCalculators", "millisecond-to-date-string", f.output.value);
+}
+
+
+function whatIsThatDate(f){
+
+  var tmpU = f.tmpUnit.options[f.tmpUnit.selectedIndex].value;
+  if(!tmpU.length)return;
+  if(!f.inPut.value.length){
+	f.output.value = "";
+	return;
+  } 
+
+  if(isNaN(parseInt(f.inPut.value))){
+	alert("Sorry, you need to enter an integer to complete this calculation.");
+	return;
+  }
+  
+  var inPut = msConverter(f.inPut.value,"*",tmpU,true);
+  
+  todayMS = today.valueOf();
+
+  var mathString = todayMS+f.operand.value+inPut;
+  var resultingDate = new Date( eval(mathString));
+  f.output.value = resultingDate;
+  //pageTracker._trackPageview("/dateCalcs/what-date-would-that-be");
+  pageTracker._trackEvent("dateCalculators", "what-date-would-that-be", f.output.value);
+}
+</script>
+
+		</div>
+        <hr style="clear: left;border:0;" />
+       	
+<!-- You can start editing here. -->
+
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+
+
+
+		
+
+
+</div>
+<!-- begin footer -->
+
+</div><!-- close wrapper div -->
+
+
+</body>
+</html>

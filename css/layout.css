@@ -25,7 +25,7 @@ a:hover { text-decoration:underline; }
 ins,a { text-decoration:none; }
 
 /** grid **/
-.ui-grid-1, .ui-grid-2, .ui-grid-3, .ui-grid-4, .ui-grid-5, .ui-grid-6, .ui-grid-7, .ui-grid-8, .ui-grid-9, .ui-grid-10, .ui-grid-11,.ui-grid-12, .ui-grid-13, .ui-grid-14, .ui-grid-15, .ui-grid-16, .ui-grid-17, .ui-grid-18, .ui-grid-19, .ui-grid-20, .ui-grid-21, .ui-grid-22, .ui-grid-23, .ui-grid-24, .ui-grid-25 { margin: 0 10px 10px 0; float:left; display:inline; }
+.ui-grid, .ui-grid-1, .ui-grid-2, .ui-grid-3, .ui-grid-4, .ui-grid-5, .ui-grid-6, .ui-grid-7, .ui-grid-8, .ui-grid-9, .ui-grid-10, .ui-grid-11,.ui-grid-12, .ui-grid-13, .ui-grid-14, .ui-grid-15, .ui-grid-16, .ui-grid-17, .ui-grid-18, .ui-grid-19, .ui-grid-20, .ui-grid-21, .ui-grid-22, .ui-grid-23, .ui-grid-24, .ui-grid-25 { margin: 0 10px 10px 0; float:left; display:inline; }
 .ui-grid-1 {width:30px;}
 .ui-grid-2 {width:70px;}
 .ui-grid-3 {width:110px;}
@@ -157,17 +157,17 @@ body .fn-hide { display:none; }
 }
 :focus{outline:0;}
 /* focus */
-.focus{overflow:hidden;position:relative;}
+.focus{overflow:hidden;position:relative;width:945px;height:280px}
 .focus .focuspic{height:280px;width:999em;position:relative;float:left;margin-bottom:10px}
-.focus .focuspic .indexbanner{float:left;width:950px;position:relative;height:280px;overflow:hidden;border:solid 1px #3366cc;}
+.focus .focuspic .indexbanner{float:left;width:945px;position:relative;height:280px;overflow:hidden;border:solid 0px #3366cc;}
 /* scrollbox */
-.scrollbox{height:120px;padding:10px 0;float:left;width:950px}
-.scrollbox .scrollbtn{width:12px;height:37px;margin:38px 10px 20px 10px;overflow:hidden;background:url("../images/arrow.gif") no-repeat;cursor:pointer;}
+.scrollbox{height:120px;padding:10px 0;float:left;width:945px}
+.scrollbox .scrollbtn{width:12px;height:37px;margin:38px 5px 20px 5px;overflow:hidden;background:url("../images/arrow.gif") no-repeat;cursor:pointer;}
 .scrollbox #prev{background-position:0 0;}
 .scrollbox #prev.disabled{background-position:0 -37px;cursor:default;}
 .scrollbox #next{background-position:-12px 0;}
 .scrollbox #next.disabled{background-position:-12px -37px;cursor:default;}
-.scrollbox .scrollpic{float:left;margin:0 16px 0 16px;display:inline;width:800px;height:190px;overflow:hidden;}
+.scrollbox .scrollpic{float:left;margin:0 10px 0 10px;display:inline;width:850px;height:190px;overflow:hidden;}
 .scrollbox .scrollpic ul{width:999em;float:left;display:inline;}
 .scrollbox .scrollpic li{float:left;width:188px;text-align:center;}
 .scrollbox .scrollpic li a img{border:solid 1px #ddd;padding:5px;}
@@ -176,8 +176,73 @@ body .fn-hide { display:none; }
 .scrollbox .scrollpic li.current a img{border:solid 1px #3366cc;}
 
 #course{
-	height: 220px;
+	height: auto;
 }
+
+
+.eventCalendar-wrap{
+	width:710px;
+	margin-bottom:0;
+	
+	border:none;
+	box-shadow:none;
+	border-radius:none;
+	background-color:#fff;
+	color:#807E7E;
+
+}
+
+.eventsCalendar-slider{
+	float: right;
+	width:250px;
+	margin-bottom:0px;
+	margin-right:5px;
+	overflow:hidden;
+	
+	-moz-box-shadow: 3px 3px #e0e0e0;
+    -webkit-box-shadow: 3px 3px 0 #e0e0e0;
+	box-shadow: 3px 3px 0 #e0e0e0;
+	
+	-webkit-border-radius: 4px 4px;
+    -moz-border-radius: 4px 4px;
+    border-radius: 4px 4px;
+}
+.eventsCalendar-monthWrap{
+	float: right;
+	overflow:hidden;
+	position:relative;
+	top:0;
+}
+
+.eventsCalendar-daysList.showAsWeek{margin-bottom:0}
+
+.eventCalendar-wrap .prev{left:453px}
+
+.eventCalendar-wrap .arrow{top:0px}
+
+.eventsCalendar-list-wrap {
+    float: left;
+    position: relative;
+	width:450px;
+	margin-left:5px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	
+	border:1px solid grey;
+	-moz-box-shadow: 3px 3px #e0e0e0;
+    -webkit-box-shadow: 3px 3px 0 #e0e0e0;
+	box-shadow: 3px 3px 0 #e0e0e0;
+	
+	-webkit-border-radius: 4px 4px;
+    -moz-border-radius: 4px 4px;
+    border-radius: 4px 4px;
+	
+	height:200px;
+}
+
+
+
+.bt{width:100px;margin-left:auto;margin-right:auto;font-size:14px}
 
 #news{
 	height: 260px;
