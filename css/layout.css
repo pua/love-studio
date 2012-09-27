@@ -169,7 +169,7 @@ body .fn-hide { display:none; }
 .scrollbox #prev.disabled{background-position:0 -37px;cursor:default;}
 .scrollbox #next{background-position:-12px 0;}
 .scrollbox #next.disabled{background-position:-12px -37px;cursor:default;}
-.scrollbox .scrollpic{float:left;margin:0 10px 0 10px;display:inline;width:850px;height:190px;overflow:hidden;}
+.scrollbox .scrollpic{float:left;margin:0 10px 0 10px;display:inline;width:850px;height:100px;overflow:hidden;}
 .scrollbox .scrollpic ul{width:999em;float:left;display:inline;}
 .scrollbox .scrollpic li{float:left;width:188px;text-align:center;}
 .scrollbox .scrollpic li a img{border:solid 1px #ddd;padding:5px;}
