@@ -42,7 +42,7 @@ $(function(){
 			if(slideclick==0||slideclick==1){
 				$(".scrollpic ul").animate({"marginLeft":"0px"},{duration:animate_time,queue:false});
 			}else{
-				$(".scrollpic ul").animate({"marginLeft":(slideclick-1)*-188},{duration:animate_time,queue:false});//显示最后4张图片不在滚动
+				$(".scrollpic ul").animate({"marginLeft":(slideclick-1)*-175},{duration:animate_time,queue:false});//显示最后4张图片不在滚动
 			}
 		}
 
@@ -103,7 +103,7 @@ $(function(){
 		if(slideclick<=picnumber){
 			slideclick=picnumber;
 			$(".scrollpic li").eq(slideclick).trigger("dblclick");
-			$(".scrollpic ul").animate({"marginLeft":(slideclick-2)*-188},{duration:animate_time,queue:false});// 缩略图最后滚动的左侧距离位置 正好4张缩略图显示
+			$(".scrollpic ul").animate({"marginLeft":(slideclick-2)*-175},{duration:animate_time,queue:false});// 缩略图最后滚动的左侧距离位置 正好4张缩略图显示
 		}else{
 			$(".scrollpic li").eq(0).trigger("dblclick");
 			slideclick = 0
