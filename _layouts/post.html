@@ -1,7 +1,14 @@
 ---
 layout: default
 ---
-<div class="path height32 clearDiv">您现在的位置：恋爱工作室 &raquo; 约会技巧 &raquo; 正文</div>
+<div class="path height32 clearDiv">您现在的位置：<a href="/" title="恋爱工作室">恋爱工作室</a>&raquo;
+	{% case page.category %}
+		{% when 'news' %}
+		<a href="/news" title="最新动向">最新动向</a>
+		{% else %}
+		{{ page.title }}
+	{% endcase %}&raquo;正文
+</div>
 <div id="leftColumn" class="ui-grid-17">
 	<div class="article">	
 		<h2>{{ page.title}}</h2>

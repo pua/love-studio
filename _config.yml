@@ -2,6 +2,6 @@
 
 #markdown: kramdown
 
-markdown: rdiscount
+markdown: maruku
 
 pygments: false
