@@ -6,10 +6,3 @@ markdown: maruku
 
 
 pygments: false
-permalink: /blog/:year/:month/:day/:title
-
-
-
-
-
-

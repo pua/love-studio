@@ -225,7 +225,7 @@ body .fn-hide { display:none; }
 
 .eventCalendar-wrap .arrow{top:0px}
 
-.eventsCalendar-list-wrap {
+.eventsCalendar-list-wrap{
     float: left;
     position: relative;
 	width:450px;
@@ -244,8 +244,6 @@ body .fn-hide { display:none; }
 	
 	height:200px;
 }
-
-
 
 .bt{width:100px;margin-left:auto;margin-right:auto;font-size:14px}
 
@@ -329,6 +327,25 @@ ul.techerlist span{
 	
 }
 
+
+#leftColumn{
+		height:auto;
+		border:1px solid #e8e8e8;
+		margin: 0 6px 10px 0;
+}
+
+.article{border-bottom:1px dashed #e8e8e8;margin: 10px 20px}
+.article h2{text-align:center;font-size:16px;font-weight:700;margin-top:20px}
+.article .post-info{text-align:center;font-weight:500;}
+.relative-post{border-bottom:1px dashed #e8e8e8;margin: 10px 20px}
+.relative-post h2{font-size:16px;font-weight:700;color:red;} 
+.comment{margin: 20px}
+
+#rightColumn{
+		height:auto;
+}
+
+.sidebar{border:1px solid #e8e8e8;}
 /** foot **/
 #foot{
 	width: 100%;
