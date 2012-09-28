@@ -1,0 +1,9 @@
+---
+layout: post
+title: "最新动向"
+---
+{% for post in site.posts %}
+	{% if post.category == 'news' %}
+		<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" target="_blank">{{post.title}}</a></li>
+	{% endif %}
+{% endfor %}

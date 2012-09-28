@@ -5,10 +5,10 @@ layout: default
 		<div id="slide" class="ui-grid-24 ui-grid-right">
 		<div class="focus cnt box-border margin-bottom10">
 					<div class="focuspic">
-					{% for post in site.posts %}
-						{% if post.category == 'slides' %}
-							<div class="indexbanner"><a target="_blank" href="{{post.redirect}}" title="{{post.title}}"><img width="945" height="280" alt="{{ post.alt }}" src="{{ post.big }}"></a></div>
-						{% endif %}
+					{% for slpost in site.categories.slides limit:7 %}
+						
+							<div class="indexbanner"><a target="_blank" href="{{slpost.redirect}}" title="{{slpost.title}}"><img width="945" height="280" alt="{{ slpost.alt }}" src="{{ slpost.big }}"></a></div>
+						
 					{% endfor %}
 					</div><!--focuspic end-->			
 				</div>
@@ -16,10 +16,10 @@ layout: default
 					<div id="prev" class="fn-left scrollbtn disabled"></div>
 					<div class="fn-left scrollpic">
 						<ul>
-						{% for post in site.posts %}
-							{% if post.category == 'slides' %}
-							<li{%if forloop.first == true %} class="current"{%endif %}><a target="_blank" href="{{ post.redirect }}" title="{{ post.title }}"><img width="150" height="90" alt="{{ post.alt }}" src="{{ post.small }}"></a></li>
-							{% endif %}
+						{% for slpost in site.categories.slides %}
+							
+							<li{%if forloop.first == true %} class="current"{%endif %}><a target="_blank" href="{{ slpost.redirect }}" title="{{ slpost.title }}"><img width="150" height="90" alt="{{ slpost.alt }}" src="{{ slpost.small }}"></a></li>
+							
 						{% endfor %}
 						</ul>
 					</div>
@@ -68,10 +68,10 @@ layout: default
 				</div>
 				<div class="clearDiv">
 				<ul id="newslist">
-				{% for post in site.posts %}
-					{% if post.category == 'news'%}
-					<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" target="_blank">{{post.title}}</a></li>
-					{% endif %}
+				{% for nspost in site.categories.news limit:5 %}
+					
+					<li><span>{{ nspost.date| date:"%Y-%m-%d"}}</span><a href="{{ nspost.url}}" title="{{nspost.title}}" target="_blank">{{nspost.title}}</a></li>
+					
 				{% endfor %}
 				</ul>
 				</div>
@@ -81,12 +81,12 @@ layout: default
 				<h2>
 				关于恋爱艺术
 				</h2>
-				{% for post in site.posts %}
-					{% if post.category == 'about' %}
+				{% for abpost in site.categories.about %}
+					
 					<div class="intro ui-grid-right ui-grid-bottom">
-						<p>{{ post.description }}<a href="{{ post.url }}" title="{{ post.title}}>">查看详情...</a></p>
+						<p>{{ abpost.description }}<a href="/about" title="{{ abpost.title}}>">查看详情...</a></p>
 					</div>
-					{% endif %}
+					
 				{% endfor %}
 			</div>
 			<div id="teacher" class="ui-grid-24 ui-grid-right box-border">
@@ -95,15 +95,15 @@ layout: default
 				</div>
 				<div class="ui-grid-24 ui-grid-right ui-grid-bottom">
 					<ul class="techerlist margin-left20">
-						{% for post in site.posts %}
-							{% if post.category == 'teacher'%}
+						{% for tcpost in site.categories.teacher limit:4 %}
+							
 							<li>
-							<img src="{{post.icon}}" class="margin-left10"/>
-							<a href="{{ post.url }}" title="{{ post.title }}"><img src="{{post.avatar}}"  class="margin-left25" /></a>
-							<h2>{{ post.title }}</h2>
-							<span>{{ post.description }}</span>
+							<img src="{{tcpost.icon}}" class="margin-left10"/>
+							<a href="{{ tcpost.url }}" title="{{ tcpost.title }}"><img src="{{tcpost.avatar}}"  class="margin-left25" /></a>
+							<h2>{{ tcpost.title }}</h2>
+							<span>{{ tcpost.description }}</span>
 						</li>
-							{% endif %}
+							
 						{% endfor %}
 					</ul>
 				</div>
