@@ -5,6 +5,14 @@ layout: default
 	{% case page.category %}
 		{% when 'news' %}
 		<a href="/news" title="最新动向">最新动向</a>
+		{% when 'about' %}
+		<a href="/about" title="关于恋爱艺术">关于恋爱艺术</a>
+		{% when 'teacher' %}
+		<a href="/teacher" title="课程导师">课程导师</a>
+		{% when 'decode' %}
+		<a href="/decode" title="恋爱解码">恋爱解码</a>
+		{% when 'course' %}
+		<a href="/course" title="课程信息">课程信息</a>
 		{% else %}
 		{{ page.title }}
 	{% endcase %}&raquo;正文
@@ -12,7 +20,7 @@ layout: default
 <div id="leftColumn" class="ui-grid-17">
 	<div class="article">	
 		<h2>{{ page.title}}</h2>
-		<div class="post-info">{{ page.date | date: "%Y年%m月%d日"}} 来源：{{ page.source}}</div>		
+		<div class="post-info">{{ page.date | date: "%Y年%m月%d日"}} 来源：{{ page.source}}</div>
 		<!-- JiaThis Button BEGIN -->
 		<div class="jiathis_style">
 		<span class="jiathis_txt">分享到：</span>
@@ -26,7 +34,7 @@ layout: default
 		<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
 		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1558027" charset="utf-8"></script>
 		<!-- JiaThis Button END -->	
-		<div class="entry">
+		<div class="entry clearDiv">
 		
 		{{ content }}
 		<span class="author">（编辑：{{ page.author }}）</span>

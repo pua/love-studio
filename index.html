@@ -3,7 +3,7 @@ layout: default
 ---
 
 		<div id="slide" class="ui-grid-24 ui-grid-right">
-				<div class="focus cnt box-border margin-bottom10">
+		<div class="focus cnt box-border margin-bottom10">
 					<div class="focuspic">
 					{% for post in site.posts %}
 						{% if post.category == 'slides' %}
@@ -69,7 +69,7 @@ layout: default
 				<div class="clearDiv">
 				<ul id="newslist">
 				{% for post in site.posts %}
-					{% if post.category == 'news' %}
+					{% if post.category == 'news'%}
 					<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" target="_blank">{{post.title}}</a></li>
 					{% endif %}
 				{% endfor %}
@@ -96,7 +96,7 @@ layout: default
 				<div class="ui-grid-24 ui-grid-right ui-grid-bottom">
 					<ul class="techerlist margin-left20">
 						{% for post in site.posts %}
-							{% if post.category == 'teacher' %}
+							{% if post.category == 'teacher'%}
 							<li>
 							<img src="{{post.icon}}" class="margin-left10"/>
 							<a href="{{ post.url }}" title="{{ post.title }}"><img src="{{post.avatar}}"  class="margin-left25" /></a>
