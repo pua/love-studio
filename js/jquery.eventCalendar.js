@@ -316,7 +316,8 @@
 			
 				var i = 0;
 				$.each(data, function(key, event) {
-					var eventDate = new Date(parseInt(event.date)),					
+					//var eventDate = new Date(parseInt(event.date)),
+					var eventDate = new Date(event.date),
 							eventYear = eventDate.getFullYear(),
 							eventMonth = eventDate.getMonth(),
 							eventDay = eventDate.getDate();

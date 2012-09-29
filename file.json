@@ -1,62 +1,13 @@
-[
-	{ 	
-		"date": "1338897600000", 
-		"type": "meeting", 
-		"title": "第三", 
-		"description": "Lorem Ipsum dolor set", 
-		"url": "http://www.event1.com/" },
+---
+layout: nil
+---
 
-	{ 
-		"date": "1338885237000", 
-		"type": "demo", 
-		"title": "第四", 
-		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-		"url": "http://www.event2.com/" },
-
-	{ 
-		"date": "1341750647000", 
-		"type": "meeting", 
-		"title": "第五", 
-		"description": "Lorem Ipsum dolor set", 
-		"url": "http://www.event1.com/" 
-	},
-
-	{ 
-		"date": "1342614647000", 
-		"type": "demo", 
-		"title": "第六", 
-		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-		"url": "http://www.event2.com/" 
-	},
-
-	{ 
-		"date": "1348835400000", 
-		"type": "meeting", 
-		"title": "第七", 
-		"description": "Lorem Ipsum dolor set", 
-		"url": "http://www.event1.com/" 
-	},
-
-	{
-		"date": "1348230647000", 
-		"type": "demo", 
-		"title": "Project B demo", 
-		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-		"url": "http://www.event2.com/" },
-
-	{ 
-		"date": "1349094647000", 
-		"type": "meeting", 
-		"title": "Project A meeting", 
-		"description": "Lorem Ipsum dolor set", 
-		"url": "http://www.event1.com/" 
-	},
-
-	{ 
-		"date": "1351600247000", 
-		"type": "demo", 
-		"title": "最后", 
-		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-		"url": "http://www.event2.com/" 
-	}
-]				
+[{% for post in site.categories.course limit:20 %}
+    {
+        "title":"{{post.title}}",
+        "url":"{{post.url}}",
+        "description": "{{ post.description }}",
+        "type": "",
+        "date":"{{post.date|date_to_xmlschema}}"
+    }{% if forloop.last == false %},{% endif %}{% endfor %}
+]
