@@ -2,8 +2,26 @@
 layout: post
 title: "最新动向"
 ---
-{% for post in site.posts %}
-	{% if post.category == 'news' %}
+<ul class="postlist">
+	{% for post in paginator.posts  %}	
 		<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" target="_blank">{{post.title}}</a></li>
-	{% endif %}
-{% endfor %}
+	{% endfor %}
+</ul>
+
+<nav id="pagination">
+   <div class="paginator-list">
+  {% if paginator.previous_page %}
+
+   {% if paginator.page == 2 %}
+   <a href="/news" rel="prev" title="按左方向键←或J键进入前一页"> << 前一页</a>
+   {% else %}
+   <a href="/news/page{{ paginator.previous_page }}" rel="prev" title="按左方向键←或J键进入前一页"> << 前一页</a>
+   {% endif %}
+  {% endif %}
+  {% if paginator.next_page %}
+  
+   <a href="/news/page{{ paginator.next_page }}" rel="next" class="next" title="按右方向键→或K键进入后一页">后一页 >></a>
+
+  {% endif %}
+	   </div>
+   </nav>

@@ -5,3 +5,5 @@
 markdown: maruku
 
 pygments: false
+
+paginate: 4
