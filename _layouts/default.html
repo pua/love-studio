@@ -31,24 +31,14 @@
 	<script type="text/javascript" src="/js/slide.js"></script>
 </head>
 <body class="main-body">
-	
-
 		{% include head.html %}
-	
 		<div id="wrap" class="width950 cnt clearDiv">
 			<div id="notice" class="ui-grid-24 ui-grid-right box-border">
 				 	<p>本周五道口PPG酒吧夜店活动 恋爱艺术团队现场演示如何open打开组合！！（北京五道口五角星酒吧）<p>
-			</div>	
-		
-			{{ content }}
-			
-		</div>
-
+			</div>{{ content }}</div>
 	<div id="foot" class="clearDiv">
-		<div id="foot-bar">
-			
-		</div>
-	
+		<div id="foot-bar">			
+		</div>	
 		<div class="width950 cnt">
 			<div id="footer" class="ui-grid-24 ui-grid-right ui-grid-bottom height32">
 					<div class="width400 cnt">
@@ -65,6 +55,9 @@
 			</div>	
 		</div>
 	</div>
+	{% for js in page.js %}
+		<script src="{{ js }}" type="text/javascript" charset="utf-8"></script>
+	{% endfor %}
 </body>
 		<!--<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
 		-->

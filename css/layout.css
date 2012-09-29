@@ -344,20 +344,54 @@ div.entry{margin-top:30px}
 .relative-post h2{font-size:16px;font-weight:700;color:red;} 
 .comment{margin: 20px}
 
-.postlist{
+#postlist{
 	margin-left:20px;
 	font-size: 16px;
 }
 
-.postlist span{
+#postlist span{
 	display:block;
 	float:left;
 	width:100px;
 }	
 
-.postlist li{
+#postlist li{
 	height:32px;
 }
+
+/********* pagination  **********/
+
+.pagination {
+            font-size: 80%;
+        }
+        
+.pagination a {
+    text-decoration: none;
+	border: solid 1px #AAE;
+	color: #15B;
+}
+
+.pagination a, .pagination span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+.pagination .current {
+    background: #26B;
+    color: #fff;
+	border: solid 1px #AAE;
+}
+
+.pagination .current.prev, .pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}
+
+/****************/
 
 #rightColumn{
 		height:auto;
