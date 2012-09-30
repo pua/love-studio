@@ -91,7 +91,9 @@
 .margin-right26{ margin-right:26px;}
 .margin-right9{margin-right:9px;}
 .margin-right20{margin-right:20px;}
+.margin-right25{margin-right:25px;}
 .margin-right30{margin-right:30px;}
+
 
 .margin-left1{margin-left:1px;}
 .margin-left2{ margin-left:2px;}
@@ -110,6 +112,8 @@
 .margin-left20{margin-left:20px;}
 .margin-left25{margin-left:25px;}
 .margin-left30{margin-left:30px;}
+.margin-left35{margin-left:35px;}
+.margin-left0{margin-left:0;}
 
 .textcolorfff{ color:#fff;}
 .textcolor000{color:#000;}
@@ -131,6 +135,7 @@
 .blueText01{ color:#1a51ab;}
  
 .z-indexNormal{ z-index:100;}
+.z-index3{z-index:3;}
 
 .margin-top2{ margin-top:2px;}
 .margin-top5{ margin-top:5px;}

@@ -1,7 +1,11 @@
 ---
 layout: default
+css: 
+    - /css/jquery.shadow.css
+
 js: 
     - /js/slide.js
+    - /js/jquery.shadow.js
 ---
 
 		<div id="slide" class="ui-grid-24 ui-grid-right">
@@ -20,7 +24,7 @@ js:
 					<div id="next" class="fn-right scrollbtn"></div>
 				</div><!--scrollbox end-->
 	
-			</div>	
+		</div>	
 			
 			<div id="course" class="ui-grid-24 ui-grid-right">
 				<div class="ui-grid-24 ui-grid-right height32 box-border">
@@ -28,7 +32,8 @@ js:
 				</div>		
 				<div class="ui-grid width710 fn-right ui-grid-right ui-grid-bottom">
 				   <div id="eventCalendarScroll" class="fn-right"></div>
-				    <script src="/js/jquery.eventCalendar.js" type="text/javascript" charset="utf-8"></script>
+				    
+					<script src="/js/jquery.eventCalendar.js" type="text/javascript" charset="utf-8"></script>
 					<script type="text/javascript">  
 					$(document).ready(function() {  
 						$("#eventCalendarScroll").eventCalendar({
@@ -57,7 +62,7 @@ js:
 			</div>
 			
 			<div id="news" class="ui-grid-24 ui-grid-right box-border">
-				<div class="ui-grid-24 ui-grid-right ui-grid-bottom height32">
+				<div class="ui-grid-24 ui-grid-right ui-grid-bottom  height32">
 				最新动向
 				</div>
 				<div class="clearDiv">
@@ -76,12 +81,12 @@ js:
 					</div>{% endfor %}
 			</div>
 			<div id="teacher" class="ui-grid-24 ui-grid-right box-border">
-				<div class="ui-grid-24 ui-grid-right ui-grid-bottom height32">
+				<div class="ui-grid-24 ui-grid-right ui-grid-bottom  height32">
 				课程导师
 				</div>
 				<div class="ui-grid-24 ui-grid-right ui-grid-bottom">
-					<ul class="techerlist margin-left20">{% for tcpost in site.categories.teacher limit:4 %}
-						<li>
+					<ul class="techerlist margin-left35">{% for tcpost in site.categories.teacher limit:4 %}
+						<li class="margin-left15{%if forloop.first == true %} margin-left0{%endif %}">
 							<img src="{{tcpost.icon}}" class="margin-left10"/>
 							<a href="{{ tcpost.url }}" title="{{ tcpost.title }}"><img src="{{tcpost.avatar}}"  class="margin-left25" /></a>
 							<h2>{{ tcpost.title }}</h2>
@@ -108,3 +113,9 @@ js:
 				</div>
 				<img src="/images/ad2.jpg" class="cnt"/>
 			</div>
+			
+			<script type="text/javascript"> 			
+				$(document).ready(function() {		
+					$('#notice').shadow('lifted');
+			});
+			</script> 
