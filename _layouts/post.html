@@ -45,6 +45,33 @@ layout: default
 	<div class="clearDiv relative-post">
 		<h2>相关文章：</h2>
 	</div>
+	
+	<div class="page-navigation clearDiv">
+		
+	</div>
+	
+	<script type="text/javascript">
+$(document).ready(function() {
+
+		$.getJSON("/json/{{page.category}}.json",function(data){
+			var content="<ul>";
+			$.each(data,function(i,item){
+				if(item.url=="{{page.url}}"){
+					if(data[i+1])
+						content += "<li class='fn-left'><a href='"+ data[i+1].url + "' title='前一篇：" + data[i+1].title +"'>&laquo;前一篇</a>";
+					if(data[i-1])
+						content += "<li class='fn-right'><a href='"+ data[i-1].url + "' title='后一篇：" + data[i-1].title +"'>&raquo;后一篇</a>";
+				}
+			});			
+			content += "</ul>";			
+			$(".page-navigation").html(content);
+		});
+		
+	});
+</script>
+	
+	
+	
 	<div class="comment">
 		<!-- Duoshuo Comment BEGIN -->
 			<div class="ds-thread" data-thread-key="" 

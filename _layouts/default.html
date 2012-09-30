@@ -9,6 +9,8 @@
      **
 	 -->
     <meta http-equiv="Content-Type" charset="utf-8" /> 
+	<meta http-equiv="Site-Enter"; content="blendTrans(Duration=1.0)">
+	<meta http-equiv="Page-Exit"; content="blendTrans(Duration=1.0)">
     <title>恋爱工作室</title>
     <meta name="generator" content="Jekyll" />
     <meta name="keywords" content="3天2夜的实战学习，让你成为把妹达人，恋爱高手" />
@@ -27,8 +29,6 @@
     <script src="/js/html5.js" type="text/javascript"></script>
     <![endif]-->
 	<script src="/js/jquery.min.js" type="text/javascript"></script>
-	<script src="/js/jquery.eventCalendar.js" type="text/javascript"></script>
-	<script type="text/javascript" src="/js/slide.js"></script>
 </head>
 <body class="main-body">
 		{% include head.html %}
@@ -56,8 +56,7 @@
 		</div>
 	</div>
 	{% for js in page.js %}
-		<script src="{{ js }}" type="text/javascript" charset="utf-8"></script>
-	{% endfor %}
+	<script src="{{ js }}" type="text/javascript" charset="utf-8"></script>{% endfor %}
 </body>
 		<!--<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
 		-->

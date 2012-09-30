@@ -1,20 +1,20 @@
 ---
 layout: post
 title: "最新动向"
+items_per_page: 3
 
 js: 
-   - /js/newspost.js
+
    - /js/jquery.pagination.js
 
 ---
-<ul id="postlist">
 
+<ul id="postlist">
+	<img src="/images/loading.gif" />&nbsp;&nbsp;加载中...
 </ul>
 
 <div id="Pagination" class="pagination">
-</div>
-
-  
+</div>  
  <script type="text/javascript">
 	$(function(){
 	//这是一个非常简单的demo实例，让列表元素分页显示
@@ -31,16 +31,19 @@ js:
 			callback: pageselectCallback,
 			prev_text: "前一页",
 			next_text: "后一页",
-			items_per_page:3 //每页显示4项
+			items_per_page:{{ page.items_per_page }}//每页显示4项
 		});
 	 }();
 	 
 	function pageselectCallback(page_index, jq){
 		 // Get number of elements per pagionation page from form
-                var items_per_page = 3;
+                var items_per_page = {{ page.items_per_page }};
                 var max_elem = Math.min((page_index+1) * items_per_page, newspost.length);
                 var newcontent = '';
-
+				
+				if ( newspost.length <= {{ page.items_per_page }} )
+					$("#Pagination").remove();
+					
                 // Iterate through a selection of the content and build an HTML string
                 for(var i=page_index*items_per_page;i<max_elem;i++)
                 {
@@ -53,13 +56,12 @@ js:
 
                 // Replace old content with new content
                 $('#postlist').html(newcontent);
-
                 // Prevent click eventpropagation
                 return false;
 	
 	}
 });
 </script>
-
+<script src="/js/newspost.js" type="text/javascript" charset="utf-8"></script>
 
 

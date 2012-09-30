@@ -1,26 +1,21 @@
 ---
 layout: default
+js: 
+    - /js/jquery.eventCalendar.js
+    - /js/slide.js
 ---
 
 		<div id="slide" class="ui-grid-24 ui-grid-right">
 		<div class="focus cnt box-border margin-bottom10">
-					<div class="focuspic">
-					{% for slpost in site.categories.slides limit:7 %}
-						
-							<div class="indexbanner"><a target="_blank" href="{{slpost.redirect}}" title="{{slpost.title}}"><img width="945" height="280" alt="{{ slpost.alt }}" src="{{ slpost.big }}"></a></div>
-						
-					{% endfor %}
+					<div class="focuspic">{% for slpost in site.categories.slides limit:7 %}
+						<div class="indexbanner"><a target="_blank" href="{% if slpost.redirect %}{{slpost.redirect}}{% else %}{{ slpost.url }}{% endif %}" title="{{slpost.title}}"><img width="945" height="280" alt="{{ slpost.alt }}" src="{{ slpost.big }}"></a></div>{% endfor %}
 					</div><!--focuspic end-->			
 				</div>
 				<div class="scrollbox cnt backcolore8">
 					<div id="prev" class="fn-left scrollbtn disabled"></div>
 					<div class="fn-left scrollpic">
-						<ul>
-						{% for slpost in site.categories.slides %}
-							
-							<li{%if forloop.first == true %} class="current"{%endif %}><a target="_blank" href="{{ slpost.redirect }}" title="{{ slpost.title }}"><img width="150" height="90" alt="{{ slpost.alt }}" src="{{ slpost.small }}"></a></li>
-							
-						{% endfor %}
+						<ul>{% for slpost in site.categories.slides %}							
+							<li{%if forloop.first == true %} class="current"{%endif %}><a target="_blank" href="{% if slpost.redirect %}{{slpost.redirect}}{% else %}{{ slpost.url }}{% endif %}" title="{{ slpost.title }}"><img width="150" height="90" alt="{{ slpost.alt }}" src="{{ slpost.small }}"></a></li>{% endfor %}
 						</ul>
 					</div>
 					<div id="next" class="fn-right scrollbtn"></div>
@@ -31,14 +26,13 @@ layout: default
 			<div id="course" class="ui-grid-24 ui-grid-right">
 				<div class="ui-grid-24 ui-grid-right height32 box-border">
 				课程中心
-				</div>				
-
+				</div>		
 				<div class="ui-grid width710 fn-right ui-grid-right ui-grid-bottom">
 				   <div id="eventCalendarScroll" class="fn-right"></div>
 					<script type="text/javascript">  
 					$(document).ready(function() {  
 						$("#eventCalendarScroll").eventCalendar({
-							eventsjson: 'file.json',
+							eventsjson: '/json/file.json',
 							eventsScrollable: false,
 							showDescription: false,
 							cacheJson: false,
@@ -67,12 +61,8 @@ layout: default
 				最新动向
 				</div>
 				<div class="clearDiv">
-				<ul id="newslist">
-				{% for nspost in site.categories.news limit:5 %}
-					
-					<li><span>{{ nspost.date| date:"%Y-%m-%d"}}</span><a href="{{ nspost.url}}" title="{{nspost.title}}" target="_blank">{{nspost.title}}</a></li>
-					
-				{% endfor %}
+				<ul id="newslist">{% for nspost in site.categories.news limit:5 %}					
+					<li><span>{{ nspost.date| date:"%Y-%m-%d"}}</span><a href="{{ nspost.url}}" title="{{nspost.title}}" target="_blank">{{nspost.title}}</a></li>{% endfor %}
 				</ul>
 				</div>
 			</div>
@@ -80,31 +70,23 @@ layout: default
 			<div id="about" class="ui-grid-24 ui-grid-right box-border">
 				<h2>
 				关于恋爱艺术
-				</h2>
-				{% for abpost in site.categories.about %}
-					
+				</h2>{% for abpost in site.categories.about %}					
 					<div class="intro ui-grid-right ui-grid-bottom">
 						<p>{{ abpost.description }}<a href="/about" title="{{ abpost.title}}>">查看详情...</a></p>
-					</div>
-					
-				{% endfor %}
+					</div>{% endfor %}
 			</div>
 			<div id="teacher" class="ui-grid-24 ui-grid-right box-border">
 				<div class="ui-grid-24 ui-grid-right ui-grid-bottom height32">
 				课程导师
 				</div>
 				<div class="ui-grid-24 ui-grid-right ui-grid-bottom">
-					<ul class="techerlist margin-left20">
-						{% for tcpost in site.categories.teacher limit:4 %}
-							
-							<li>
+					<ul class="techerlist margin-left20">{% for tcpost in site.categories.teacher limit:4 %}
+						<li>
 							<img src="{{tcpost.icon}}" class="margin-left10"/>
 							<a href="{{ tcpost.url }}" title="{{ tcpost.title }}"><img src="{{tcpost.avatar}}"  class="margin-left25" /></a>
 							<h2>{{ tcpost.title }}</h2>
 							<span>{{ tcpost.description }}</span>
-						</li>
-							
-						{% endfor %}
+						</li>{% endfor %}
 					</ul>
 				</div>
 	

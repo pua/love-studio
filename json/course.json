@@ -1,0 +1,5 @@
+---
+layout: nil
+---
+
+[{% for post in site.categories.course %}{"title":"{{post.title}}","url":"{{post.url}}"}{% if forloop.last == false %},{% endif %}{% endfor %}]
