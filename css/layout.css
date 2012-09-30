@@ -265,7 +265,7 @@ body .fn-hide { display:none; }
 	margin-right:10px;
 	display:block; 
 	float:left;
-	width:90px;
+	width:100px;
 }
 
 #about{
@@ -328,12 +328,19 @@ ul.techerlist span{
 
 
 #leftColumn{
-		height:auto;
+		height: auto;
 		border:1px solid #e8e8e8;
 		margin: 0 6px 10px 0;
 }
 
-.article{border-bottom:1px dashed #e8e8e8;margin: 10px 20px}
+.article{
+		border-bottom:1px dashed #e8e8e8;
+		margin: 10px 20px;
+		height:auto!important;
+		_height: 400px;
+		min-height: 400px;
+		_overflow: visible;
+}
 .article h2{text-align:center;font-size:16px;font-weight:700;margin-top:20px}
 .entry p{font-size:16px;margin-bottom:10px;text-indent:2em;}
 div.jiathis_style{width:450px;margin: 10px auto 40px auto}

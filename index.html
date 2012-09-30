@@ -1,7 +1,6 @@
 ---
 layout: default
 js: 
-    - /js/jquery.eventCalendar.js
     - /js/slide.js
 ---
 
@@ -29,10 +28,11 @@ js:
 				</div>		
 				<div class="ui-grid width710 fn-right ui-grid-right ui-grid-bottom">
 				   <div id="eventCalendarScroll" class="fn-right"></div>
+				    <script src="/js/jquery.eventCalendar.js" type="text/javascript" charset="utf-8"></script>
 					<script type="text/javascript">  
 					$(document).ready(function() {  
 						$("#eventCalendarScroll").eventCalendar({
-							eventsjson: '/json/file.json',
+							eventsjson: '/json/course.json',
 							eventsScrollable: false,
 							showDescription: false,
 							cacheJson: false,
