@@ -6,6 +6,7 @@ css:
 js: 
     - /js/slide.js
     - /js/jquery.shadow.js
+    - /js/jquery.corner.js
 ---
 
 		<div id="slide" class="ui-grid-24 ui-grid-right">
@@ -22,14 +23,11 @@ js:
 						</ul>
 					</div>
 					<div id="next" class="fn-right scrollbtn"></div>
-				</div><!--scrollbox end-->
-	
+				</div><!--scrollbox end-->	
 		</div>	
 			
 			<div id="course" class="ui-grid-24 ui-grid-right">
-				<div class="ui-grid-24 ui-grid-right height32 box-border">
-				课程中心
-				</div>		
+				<div class="ui-grid-24 ui-grid-right height32 box-border">课程中心</div>		
 				<div class="ui-grid width710 fn-right ui-grid-right ui-grid-bottom">
 				   <div id="eventCalendarScroll" class="fn-right"></div>
 				    
@@ -40,7 +38,8 @@ js:
 							eventsjson: '/json/course.json',
 							eventsScrollable: false,
 							showDescription: false,
-							cacheJson: false,
+							cacheJson: true,
+							openEventInNewWindow: true,
 							eventsLimit: 3,
 							monthNames: [ "一月", "二月", "三月", "四月", "五月", "六月","七月", "八月", "九月", "十月", "十一月", "十二月" ],
 							dayNames: [ '周日','周一','周二','周三', '周四','周五','周六'  ],
@@ -62,9 +61,7 @@ js:
 			</div>
 			
 			<div id="news" class="ui-grid-24 ui-grid-right box-border">
-				<div class="ui-grid-24 ui-grid-right ui-grid-bottom  height32">
-				最新动向
-				</div>
+				<div class="ui-grid-24 ui-grid-right ui-grid-bottom  height32">最新动向</div>
 				<div class="clearDiv">
 				<ul id="newslist">{% for nspost in site.categories.news limit:5 %}					
 					<li><span>{{ nspost.date| date:"%Y-%m-%d"}}</span><a href="{{ nspost.url}}" title="{{nspost.title}}" target="_blank">{{nspost.title}}</a></li>{% endfor %}
@@ -73,22 +70,18 @@ js:
 			</div>
 
 			<div id="about" class="ui-grid-24 ui-grid-right box-border">
-				<h2>
-				关于恋爱艺术
-				</h2>{% for abpost in site.categories.about %}					
+				<h2>关于恋爱艺术	</h2>{% for abpost in site.categories.about %}					
 					<div class="intro ui-grid-right ui-grid-bottom">
 						<p>{{ abpost.description }}<a href="/about" title="{{ abpost.title}}>">查看详情...</a></p>
 					</div>{% endfor %}
 			</div>
 			<div id="teacher" class="ui-grid-24 ui-grid-right box-border">
-				<div class="ui-grid-24 ui-grid-right ui-grid-bottom  height32">
-				课程导师
-				</div>
+				<div class="ui-grid-24 ui-grid-right ui-grid-bottom  height32">课程导师</div>
 				<div class="ui-grid-24 ui-grid-right ui-grid-bottom">
 					<ul class="techerlist margin-left35">{% for tcpost in site.categories.teacher limit:4 %}
 						<li class="margin-left15{%if forloop.first == true %} margin-left0{%endif %}">
 							<img src="{{tcpost.icon}}" class="margin-left10"/>
-							<a href="{{ tcpost.url }}" title="{{ tcpost.title }}"><img src="{{tcpost.avatar}}"  class="margin-left25" /></a>
+							<a href="{{ tcpost.url }}" title="{{ tcpost.title }}" target="_blank"><img src="{{tcpost.avatar}}"  class="margin-left25" /></a>
 							<h2>{{ tcpost.title }}</h2>
 							<span>{{ tcpost.description }}</span>
 						</li>{% endfor %}
@@ -117,5 +110,6 @@ js:
 			<script type="text/javascript"> 			
 				$(document).ready(function() {		
 					$('#notice').shadow('lifted');
+					$('.scrollbox').corner();
 			});
 			</script> 

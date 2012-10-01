@@ -205,26 +205,12 @@
 	}
 
 	function num_abbrev_str(num) {
-		var len = num.length, last_char = num.charAt(len - 1), abbrev
-		if (len === 2 && num.charAt(0) === '1') {
-			//abbrev = 'th';
-			abbrev = '日'
-		} else {
-			if (last_char === '1') {
-				//abbrev = 'st'
-				abbrev = '日'
-			} else if (last_char === '2') {
-				//abbrev = 'nd'
-				abbrev = '日'
-			} else if (last_char === '3') {
-				//abbrev = 'rd'
-				abbrev = '日'
-			} else {
-				//abbrev = 'th'
-				abbrev = '日'
-			}
-		}
-		return num + abbrev
+		// 重写了这个函数		
+		var dayArray = ["一","二", "三", "四", "五", "六", "七", "八", "九", "十",
+						"十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十",
+						"二十一", "二十二", "二十三", "二十四", "二十五", "二十六", "二十七", "二十八", "二十九", "三十", "三十一"];	
+		
+		return dayArray[num-1] + '日';
 	}
 	
 	function getEvents(limit, year, month, day, direction) {
@@ -338,8 +324,9 @@
 								if (month === false && eventDate < new Date()) {
 								
 							} else {
-									eventStringDate = eventDay + "/" + eventMonthToShow + "/" + eventYear;
-									
+									// eventStringDate = eventDay + "/" + eventMonthToShow + "/" + eventYear;
+									// 重写上面这句
+									eventStringDate = eventYear +"-"+ eventMonthToShow + "-" + eventDay;
 									events.push('<li id="' + key + '" class="'+event.type+'"><time datetime="'+eventDate+'"><em>' + eventStringDate + '</em><small>'+eventHour+":"+eventMinute+'</small></time><a href="'+event.url+'" target="' + eventLinkTarget + '" class="eventTitle">' + event.title + '</a><p class="eventDesc ' + eventDescClass + '">' + event.description + '</p></li>');
 									i++;
 								}

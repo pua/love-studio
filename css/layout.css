@@ -148,7 +148,7 @@ body .fn-hide { display:none; }
 .focus .focuspic{height:280px;width:999em;position:relative;float:left;margin-bottom:10px}
 .focus .focuspic .indexbanner{float:left;width:945px;position:relative;height:280px;overflow:hidden;border:solid 0px #3366cc;}
 /* scrollbox */
-.scrollbox{height:100px;padding:5px 0;float:left;width:945px}
+.scrollbox{height:100px;padding:5px 0;width:945px}
 .scrollpic{height:100px;}
 .scrollbox .scrollbtn{width:12px;height:37px;margin:38px 5px 20px 5px;overflow:hidden;background:url("../images/arrow.gif") no-repeat;cursor:pointer;}
 .scrollbox #prev{background-position:0 0;}
