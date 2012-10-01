@@ -233,6 +233,11 @@ body .fn-hide { display:none; }
 }
 
 
+.eventsCalendar-loading{top:70px;left:150px;}
+
+.eventsCalendar-list .eventsCalendar-noEvents {width:200px;margin:40px auto;}
+
+
 .bt{width:100px;margin-left:auto;margin-right:auto;font-size:14px}
 
 #news{
