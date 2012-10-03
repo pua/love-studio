@@ -4,5 +4,7 @@
 
 markdown: maruku
 
+permalink: /:categories/:year/:month/:day/:title
+
 pygments: false
 
