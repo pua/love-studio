@@ -8,7 +8,7 @@
      * Create Date:    2012-09-29
      **
 	 -->
-    <meta http-equiv="Content-Type" charset="utf-8" /> 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Site-Enter"  content="blendTrans(Duration=1.0)"/>
 	<meta http-equiv="Page-Enter"  content="blendTrans(Duration=1.0)"/>
 	<meta http-equiv="Page-Exit"  content="blendTrans(Duration=1.0)"/>
@@ -18,9 +18,9 @@
 	<meta name="description" content="系统学习恋爱知识，让你成为把妹达人，恋爱高手" />
 	<meta name="author" content="www.lovegzs.com" />
 	<!-- Core CSS File. The CSS code needed to make eventCalendar works -->
-	<link rel="stylesheet" href="/css/eventCalendar.css">	
+	<link rel="stylesheet" type="text/css" href="/css/eventCalendar.css" />	
 	<!-- Theme CSS file: it makes eventCalendar nicer -->
-	<link rel="stylesheet" href="/css/eventCalendar_theme_responsive.css">
+	<link rel="stylesheet" type="text/css" href="/css/eventCalendar_theme_responsive.css" />
 	    <link rel="stylesheet" href="/css/layout.css" type="text/css" />
     <link rel="stylesheet" href="/css/utilities.css" type="text/css" />
 	{% for css in page.css %}
@@ -37,8 +37,10 @@
 		{% include head.html %}
 		<div id="wrap" class="width950 cnt clearDiv">
 			<div id="notice" class="ui-grid-24 ui-grid-right box-border">
-				 	<p>本周五道口PPG酒吧夜店活动 恋爱艺术团队现场演示如何open打开组合！！（北京五道口五角星酒吧）<p>
-			</div>{{ content }}</div>
+				 	<p>本周五道口PPG酒吧夜店活动 恋爱艺术团队现场演示如何open打开组合！！（北京五道口五角星酒吧）</p>
+			</div>
+			{{ content }}
+		</div>
 	<div id="foot" class="clearDiv">
 		<div id="foot-bar">			
 		</div>	
