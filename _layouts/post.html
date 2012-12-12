@@ -18,7 +18,7 @@ layout: default
 <div id="leftColumn" class="ui-grid-17">
 	<div class="article">	
 		<h2>{{ page.title}}</h2>
-		<div class="post-info">{{ page.date | date: "%Y年%m月%d日"}} 来源：{{ page.source}}</div>
+		{% unless page.type =='课程介绍' %}<div class="post-info">{{ page.date | date: "%Y年%m月%d日"}} 来源：{{ page.source}}</div>{% endunless %}
 		<!-- JiaThis Button BEGIN -->
 		<div class="jiathis_style">
 		<span class="jiathis_txt">分享到：</span>
@@ -32,12 +32,8 @@ layout: default
 		<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
 		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1558027" charset="utf-8"></script>
 		<!-- JiaThis Button END -->	
-		<div class="entry clearDiv">
-		
-		{{ content }}
-		<span class="author">（编辑：{{ page.author }}）</span>
-		
-				
+		<div class="entry clearDiv">		
+		{{ content }}			
 		</div>
 	</div>
 	
@@ -51,7 +47,6 @@ layout: default
 				{% endif %}
 			{% endfor %}
 			</ul>
-		<ul>
 	</div>
 	{% elsif page.coursename == 'decode' %}
 	<div class="clearDiv relative-post">
@@ -59,7 +54,6 @@ layout: default
 			<ul id="postlist">{% for post in site.categories.course %}					
 				{% if post.coursename == 'decode' and post.url != page.url %}<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" >{{post.title}}</a></li>{% endif %}{% endfor %}
 			</ul>
-		<ul>
 	</div>
 	{% elsif page.relatedpost %}
 	<div class="clearDiv relative-post">
@@ -79,9 +73,9 @@ $(document).ready(function() {
 			$.each(data,function(i,item){
 				if(item.url=="{{page.url}}"){
 					if(data[i+1])
-						content += "<li class='fn-left'><a href='"+ data[i+1].url + "' title='前一篇：" + data[i+1].title +"'>&laquo;前一篇</a>";
+						content += "<li class='fn-left'><a href='"+ data[i+1].url + "' title='前一篇：" + data[i+1].title +"'>&laquo;前一篇</a></li>";
 					if(data[i-1])
-						content += "<li class='fn-right'><a href='"+ data[i-1].url + "' title='后一篇：" + data[i-1].title +"'>&raquo;后一篇</a>";
+						content += "<li class='fn-right'><a href='"+ data[i-1].url + "' title='后一篇：" + data[i-1].title +"'>&raquo;后一篇</a></li>";
 				}
 			});			
 			content += "</ul>";			
