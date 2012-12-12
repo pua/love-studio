@@ -9,13 +9,11 @@ layout: default
 		<a href="/about" title="关于恋爱艺术">关于恋爱艺术</a>
 		{% when 'teacher' %}
 		<a href="/teacher" title="课程导师">课程导师</a>
-		{% when 'decode' %}
-		<a href="/decode" title="恋爱解码">恋爱解码</a>
 		{% when 'course' %}
 		<a href="/course" title="课程信息">课程信息</a>
 		{% else %}
 		{{ page.title }}
-	{% endcase %}&raquo;正文
+	{% endcase %}{% if page.date %}&raquo;正文{% endif %}{% if page.type =='课程介绍' %}&raquo;{{ page.title }}{% elsif page.type == "目录" %}&raquo;目录 {% endif %}
 </div>
 <div id="leftColumn" class="ui-grid-17">
 	<div class="article">	
@@ -42,9 +40,32 @@ layout: default
 				
 		</div>
 	</div>
+	
+	{% if page.coursename == 'projectpua' %}
+	<div class="clearDiv relative-post">
+		<h2>相关课程信息：</h2>
+			<ul id="postlist">
+			{% for post in site.categories.course %}					
+				{% if post.coursename == 'projectpua' and post.url != page.url %}
+				<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}">{{post.title}}</a></li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+		<ul>
+	</div>
+	{% elsif page.coursename == 'decode' %}
+	<div class="clearDiv relative-post">
+		<h2>相关课程信息：</h2>
+			<ul id="postlist">{% for post in site.categories.course %}					
+				{% if post.coursename == 'decode' and post.url != page.url %}<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" >{{post.title}}</a></li>{% endif %}{% endfor %}
+			</ul>
+		<ul>
+	</div>
+	{% elsif page.relatedpost %}
 	<div class="clearDiv relative-post">
 		<h2>相关文章：</h2>
 	</div>
+	{% endif %}
 	
 	<div class="page-navigation clearDiv">
 		
@@ -90,13 +111,5 @@ $(document).ready(function() {
 		<!-- Duoshuo Comment END -->
 	</div>
 </div>
-<div id="rightColumn" class="ui-grid-7 ui-grid-right ui-grid-bottom">
-	<div class="width262 cnt">
-		<a href="/" title="PUA成长计划">
-		<img src="/images/sidebar-ad1.jpg" width="262px" alt="PUA成长计划"/>
-		</a>
-	</div>
-	<div class="sidebar width260 height170 cnt">
-	
-	</div>
-</div>
+
+{% include sidebar.html %}

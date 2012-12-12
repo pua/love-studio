@@ -1,0 +1,21 @@
+---
+layout: post
+category: course
+title: PUA成长计划
+description: 夜店和daygame
+type: 课程介绍
+---
+
+
+
+<h2>课程信息：</h2>
+	<ul id="postlist">
+	{% for post in site.categories.course %}					
+		{% if post.coursename == 'projectpua' and post.url != page.url %}
+			<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" target="_blank">{{post.title}}</a></li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+<ul>
+
+

@@ -1,0 +1,66 @@
+---
+layout: post
+title: "课程信息"
+items_per_page: 30
+type: 目录
+
+js: 
+   - /js/jquery.pagination.js
+
+---
+
+<ul id="postlist">
+	<img src="/images/loading.gif" />&nbsp;&nbsp;加载中...
+</ul>
+
+<div id="Pagination" class="pagination">
+</div>  
+ <script type="text/javascript">
+	$(function(){
+	//这是一个非常简单的demo实例，让列表元素分页显示
+	//回调函数的作用是显示对应分页的列表项内容
+	//回调函数在用户每次点击分页链接的时候执行
+	//参数page_index{int整型}表示当前的索引页
+	// 详情请看 http://www.zhangxinxu.com/jq/pagination_zh/
+	var initPagination = function() {
+		var num_entries = newspost.length;
+		// 创建分页
+		$("#Pagination").pagination(num_entries, {
+			num_edge_entries: 1, //边缘页数
+			num_display_entries: 4, //主体页数
+			callback: pageselectCallback,
+			prev_text: "前一页",
+			next_text: "后一页",
+			items_per_page:{{ page.items_per_page }}//每页显示4项
+		});
+	 }();
+	 
+	function pageselectCallback(page_index, jq){
+		 // Get number of elements per pagionation page from form
+                var items_per_page = {{ page.items_per_page }};
+                var max_elem = Math.min((page_index+1) * items_per_page, newspost.length);
+                var newcontent = '';
+				
+				if ( newspost.length <= {{ page.items_per_page }} )
+					$("#Pagination").remove();
+					
+                // Iterate through a selection of the content and build an HTML string
+                for(var i=page_index*items_per_page;i<max_elem;i++)
+                {
+					newcontent += "<li><span>" + newspost[i][2];
+					newcontent += "</span><a href='" + newspost[i][1];
+					newcontent += "' title='" + newspost[i][0] 
+					newcontent += "'>" + newspost[i][0] + "</a></li>"
+                }
+
+                // Replace old content with new content
+                $('#postlist').html(newcontent);
+                // Prevent click eventpropagation
+                return false;
+	
+	}
+});
+</script>
+<script src="/js/course.js" type="text/javascript" charset="utf-8"></script>
+
+

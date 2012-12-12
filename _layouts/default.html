@@ -34,33 +34,15 @@
 	<script src="/js/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
-		{% include head.html %}
+{% include head.html %}
 		<div id="wrap" class="width950 cnt clearDiv">
 			<div id="notice" class="ui-grid-24 ui-grid-right box-border">
 				 	<p>本周五道口PPG酒吧夜店活动 恋爱艺术团队现场演示如何open打开组合！！（北京五道口五角星酒吧）</p>
 			</div>
 			{{ content }}
 		</div>
-	<div id="foot" class="clearDiv">
-		<div id="foot-bar">			
-		</div>	
-		<div class="width950 cnt">
-			<div id="footer" class="ui-grid-24 ui-grid-right ui-grid-bottom height32">
-					<div class="width400 cnt">
-						<ul class="cnt">
-							<li><a href="#">关于我们</a></li>
-							<li><a href="#">广告投放</a></li>
-							<li><a href="#">版权声明</a></li>
-							<li><a href="#">友情链接</a></li>
-							<li><a href="#">加入我们</a></li>
-							<li><a href="#">咨询热线</a></li>
-						</ul>
-					</div>					
-					<div id="copyright" class="clearDiv">Copyright &copy; 2012 恋爱艺术(www.loveartcn.com) 版权所有 All Rights Reserved.</div>
-			</div>	
-		</div>
-	</div>
-	{% for js in page.js %}
+{% include foot.html %}
+{% for js in page.js %}
 	<script src="{{ js }}" type="text/javascript" charset="utf-8"></script>{% endfor %}
 
 </body>
