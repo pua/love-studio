@@ -1,0 +1,18 @@
+---
+layout: post
+title: "课程导师"
+type: 目录
+---
+
+<div class="ui-grid-right ui-grid-bottom">
+		<ul class="techerlist margin-left35">{% for tcpost in site.categories.teacher %}
+			<li class="margin-left15{%if forloop.first == true %} margin-left0{%endif %}">
+				<img src="{{tcpost.icon}}" alt="title-icon" class="margin-left10" />
+					<a href="{{ tcpost.url }}" title="{{ tcpost.title }}" target="_blank"><img src="{{tcpost.avatar}}" alt="{{ tcpost.title }}" class="margin-left25" /></a>
+					<h2>{{ tcpost.title }}</h2>
+					<span>{{ tcpost.description }}</span>
+			</li>{% endfor %}
+		</ul>
+</div>
+
+
