@@ -6,7 +6,9 @@ description: 夜店和daygame
 type: 课程介绍
 ---
 
-
+{% for i in (1..30) %}
+<img class="lazy" src="/images/dot.gif" data-original="http://loveartcn.com/course/projectpua_{{i}}.jpg"/>
+{% endfor %}
 
 <h2>课程信息：</h2>
 	<ul id="postlist">
@@ -15,7 +17,13 @@ type: 课程介绍
 			<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" target="_blank">{{post.title}}</a></li>
 			{% endif %}
 		{% endfor %}
-	</ul>
-<ul>
+</ul>
+
+<script src="/js/jquery.lazyload.js" type="text/javascript"></script>
+<script type="text/javascript">
+// 说明请看 http://www.appelsiini.net/projects/lazyload 
+$("img.lazy").lazyload();
+</script>
+
 
 
