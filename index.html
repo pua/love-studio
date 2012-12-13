@@ -5,10 +5,8 @@ css:
 
 js: 
     - /js/slide.js
-    - /js/jquery.shadow.js
     - /js/jquery.corner.js
 ---
-
 		<div id="slide" class="ui-grid-24 ui-grid-right">
 		<div class="focus cnt box-border margin-bottom10">
 					<div class="focuspic">{% for slpost in site.categories.slides limit:7 %}
@@ -106,10 +104,8 @@ js:
 				</div>
 				<img src="/images/ad2.jpg" alt="广告2" class="cnt"/>
 			</div>
-			
 			<script type="text/javascript"> 			
 				$(document).ready(function() {		
-					$('#notice').shadow('lifted');
 					$('.scrollbox').corner();
 			});
-			</script> 
+			</script> 	

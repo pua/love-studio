@@ -14,7 +14,7 @@ type: 课程介绍
 	<ul id="postlist">
 	{% for post in site.categories.course %}					
 		{% if post.coursename == 'decode' and post.url != page.url %}
-			<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" target="_blank">{{post.title}}</a></li>
+			<li><span>{{ post.date| date:"%Y-%m-%d"}}</span><a href="{{ post.url}}" title="{{post.title}}" >{{post.title}}</a></li>
 			{% endif %}
 			{% endfor %}
 </ul>

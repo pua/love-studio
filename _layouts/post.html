@@ -3,17 +3,11 @@ layout: default
 ---
 <div class="path height32 clearDiv">您现在的位置：<a href="/" title="恋爱工作室">恋爱工作室</a>&raquo;
 	{% case page.category %}
-		{% when 'news' %}
-		<a href="/news" title="最新动向">最新动向</a>
-		{% when 'about' %}
-		<a href="/about" title="关于恋爱艺术">关于恋爱艺术</a>
-		{% when 'teacher' %}
-		<a href="/teacher" title="课程导师">课程导师</a>
-		{% when 'course' %}
-		<a href="/course" title="课程信息">课程信息</a>
-		{% else %}
-		{{ page.title }}
-	{% endcase %}{% if page.date %}&raquo;正文{% endif %}{% if page.type =='课程介绍' %}&raquo;{{ page.title }}{% elsif page.type == "目录" %}&raquo;目录 {% endif %}
+		{% when 'news' %}<a href="/news" title="最新动向">最新动向</a>
+		{% when 'about' %}<a href="/about" title="关于恋爱艺术">关于恋爱艺术</a>
+		{% when 'teacher' %}<a href="/teacher" title="课程导师">课程导师</a>
+		{% when 'course' %}<a href="/course" title="课程信息">课程信息</a>
+		{% else %}{{ page.title }}{% endcase %}{% if page.date %}&raquo;正文{% endif %}{% if page.type =='课程介绍' %}&raquo;{{ page.title }}{% elsif page.type == "目录" %}&raquo;目录 {% endif %}
 </div>
 <div id="leftColumn" class="ui-grid-17">
 	<div class="article">	
@@ -84,9 +78,7 @@ $(document).ready(function() {
 		
 	});
 </script>
-	
-	
-	
+
 	<div class="comment">
 		<!-- Duoshuo Comment BEGIN -->
 			<div class="ds-thread" data-thread-key="" 
@@ -105,5 +97,4 @@ $(document).ready(function() {
 		<!-- Duoshuo Comment END -->
 	</div>
 </div>
-
 {% include sidebar.html %}
