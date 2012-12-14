@@ -2,7 +2,7 @@
 layout: post
 title: 恋爱解码
 ---
-![cover](/images/bg.png)
+![cover](http://loveartcn.com/lovestudio/bg.png)
 ##前言##
 
 
@@ -21,7 +21,7 @@ title: 恋爱解码
 <p style="text-align:right">2012年</p>
 
 ##作者简介##
-![蓝色答案](/images/answer.png)
+![蓝色答案](http://loveartcn.com/lovestudio/answer.png)
 
 蓝色答案，生于1987年，PUA机构认证的情感咨询师。从09年入行到现在，他指导的学员的人数已超过200人。学员负面评价率为0%，居业内第一。
 在积累了丰富的实战经验后，蓝色答案推出了一套符合中国国情的约会与恋爱方法： 《蓝色答案方法》 
