@@ -7,7 +7,7 @@ layout: default
 		{% when 'about' %}<a href="/about" title="关于恋爱艺术">关于恋爱艺术</a>
 		{% when 'teacher' %}<a href="/teacher" title="课程导师">课程导师</a>
 		{% when 'course' %}<a href="/course" title="课程信息">课程信息</a>
-		{% else %}{{ page.title }}{% endcase %}{% if page.date %}&raquo;正文{% endif %}{% if page.type =='课程介绍' %}&raquo;{{ page.title }}{% elsif page.type == "目录" %}&raquo;目录 {% endif %}
+		{% else %}{% if page.parent %}<a href="{{ page.parent.url}}" title="{{ page.parent.title}}">{{ page.parent.title}}</a>&raquo;{% endif %}{{ page.title }}{% endcase %}{% if page.date %}&raquo;正文{% endif %}{% if page.type =='课程介绍' %}&raquo;{{ page.title }}{% elsif page.type == "目录" %}&raquo;目录 {% endif %}
 </div>
 <div id="leftColumn" class="ui-grid-17">
 	<div class="article">	
@@ -55,12 +55,16 @@ layout: default
 	</div>
 	{% endif %}
 	
+	{% if page.navigation %}
 	<div class="page-navigation clearDiv">
-		
+	{% if page.navigation.pre or page.navigation.next %}
+		<ul>{% if page.navigation.pre %}<li class="fn-left"><a href="{{ page.navigation.pre }}" title="前一篇" >&laquo;前一篇</a></li>{% endif %}
+		{% if page.navigation.next %}<li class="fn-right"><a href="{{ page.navigation.next }}" title="后一篇" >&raquo;后一篇</a></li>{% endif %}
+		</ul>
+	{% endif %}		
 	</div>
-	
 	<script type="text/javascript">
-$(document).ready(function() {
+	$(document).ready(function() {
 
 		$.getJSON("/json/{{page.category}}.json",function(data){
 			var content="<ul>";
@@ -77,7 +81,7 @@ $(document).ready(function() {
 		});
 		
 	});
-</script>
+</script>{% endif %}
 
 	<div class="comment">
 		<!-- Duoshuo Comment BEGIN -->
